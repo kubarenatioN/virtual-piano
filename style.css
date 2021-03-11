@@ -160,7 +160,7 @@ body {
   color: #CBD5DE;
 }
 .piano-key:active::before {
-  color: #fff;
+  /* color: #fff; */
 }
 .piano-key.sharp::before {
   bottom: 220px;
