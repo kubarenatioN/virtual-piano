@@ -150,6 +150,10 @@ body {
   transition: 0.3s;
   pointer-events: none;
 }
+.piano-key.playing::before,
+.piano-key.playing:hover::before {
+  color: rgb(143, 255, 240);
+}
 .piano-key.show-note::before {
   content: attr(data-note);
 }

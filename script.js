@@ -31,11 +31,15 @@ SetKeySign(activeSignButton.dataset.sign)
 
 
 window.addEventListener('keydown', PlayKeySound)
+window.addEventListener('compositionstart', (e) => {
+  console.log('test');
+  console.log(e);
+})
 
 function PlayKeySound(e) {
+  if (e.repeat) return
+  console.log(e);
   let keyCode = e.keyCode
-  if(e.repeat) return
-  // console.log(e);
   let audio = document.querySelector(`audio[data-key='${keyCode}']`)
   if(audio == null) return
   let key = document.querySelector(`.piano-key[data-key='${keyCode}']`)
@@ -45,7 +49,6 @@ function PlayKeySound(e) {
 }
 
 function PlayMouseSound(e) {
-  e.preventDefault()
   let key = e.target
   let audio = document.querySelector(`audio[data-letter=${key.dataset.letter}]`)
   audio.currentTime = 0
