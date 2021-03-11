@@ -34,6 +34,8 @@ window.addEventListener('keydown', PlayKeySound)
 
 function PlayKeySound(e) {
   let keyCode = e.keyCode
+  if(e.repeat) return
+  // console.log(e);
   let audio = document.querySelector(`audio[data-key='${keyCode}']`)
   if(audio == null) return
   let key = document.querySelector(`.piano-key[data-key='${keyCode}']`)
