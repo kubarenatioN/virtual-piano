@@ -52,7 +52,7 @@ function PlayMouseSound(e) {
 }
 
 pianoKeys.forEach(key => {
-  key.addEventListener('click', PlayMouseSound)
+  key.addEventListener('mousedown', PlayMouseSound)
   key.addEventListener('mouseenter', (e) => {
     if (e.buttons == 1) PlayMouseSound(e)
   })
